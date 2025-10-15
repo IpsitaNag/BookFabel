@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>Header</title>
+</head>
+
+<body>
+
+    <header>
+
+        <!-- story line -->
+        <div class="story">"A world where every book tells its own fable.”</div>
+
+        <!-- navbar -->
+        <nav class="navbar">
+            <li style="cursor: pointer; font-family:cursive; font-size: 20px;">BookFabel</li>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Library</a></li>
+                <li>
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn" onclick="toggleDropdown(event)">Browse ▼</a>
+                        <div class="dropdown-content">
+                            <a href="#">Art</a>
+                            <a href="#">Advanture</a>
+                            <a href="#">Biography</a>
+                            <a href="#">Comics</a>
+                            <a href="#">Detective</a>
+                            <a href="#">Thriller</a>
+                            <a href="#">Horror</a>
+                            <a href="#">Fantacy</a>
+                            <a href="#">Romance</a>
+                            <a href="#">History</a>
+                            <a href="#">Self Help</a>
+                            <a href="#">Funny</a>
+                            <a href="#" style="text-decoration: underline;">All</a>
+                        </div>
+                    </div>
+                </li>
+                <li><input type="text" placeholder="Search books..." class="search"> <i
+                        class="fa-solid fa-magnifying-glass" style="cursor: pointer;"></i>
+                </li>
+            </ul>
+            <button class="btn">Join</button>
+        </nav>
+    </header>
+
+
+
+
+
+
+    <script src="../script.js">
+    </script>
+
+</body>
+
+</html>
