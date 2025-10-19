@@ -1,0 +1,29 @@
+/* --- Footer --- */
+footer {
+    background-color: #244a23; /* dark green */
+    color: #f9eab3;
+    padding: 12px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: #f9eab3;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  footer p{
+    margin: 10px 0 0 0;
+  }
+  /* --- Footer --- */
+  footer{ 
+     text-align:center;
+     background:#244a23; 
+     font-size:0.95rem;
+  }

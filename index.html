@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookFabel | Discover Stories</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+  <!-- header -->
+  <header>
+
+    <!-- story line -->
+    <div class="story">"A world where every book tells its own fable.”</div>
+
+    <!-- navbar -->
+    <nav class="navbar">
+      <a href="index.html" class="logo" target="_blank">BookFabel</a>
+      <i class="fas fa-bars hamburger" id="hamburger"></i>
+      <ul id="navLinks">
+        <li><a href="index.html" target="_blank">Home</a></li>
+        <li><a href="#" id="libraryBtn" target="_blank">My Library</a></li>
+        <div id="loginModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);
+                    background:#fff; padding:17px; border:2px solid #333; border-radius:8px; z-index:100;">
+          <p>Please log in first to access the library!</p>
+          <button onclick="closeModal()" style="margin-top: 8px; padding: 3px;">OK</button>
+        </div>
+        <li>
+          <div class="dropdown">
+            <a href="#" class="dropbtn" onclick="toggleDropdown(event)">Browse ▼</a>
+            <div class="dropdown-content">
+              <a href="#">Art</a>
+              <a href="#">Advanture</a>
+              <a href="#">Biography</a>
+              <a href="#">Comics</a>
+              <a href="#">Detective</a>
+              <a href="#">Thriller</a>
+              <a href="#">Horror</a>
+              <a href="#">Fantacy</a>
+              <a href="#">Romance</a>
+              <a href="#">History</a>
+              <a href="#">Self Help</a>
+              <a href="#">Funny</a>
+              <a href="#" style="text-decoration: underline;">All</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <a href="login.html?redirect=" class="btn" id="joinBtn">Join</a>
+    </nav>
+  </header>
+
+
+  <!-- body -->
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Discover Your Next Favorite Book</h1>
+    <p>Search millions of stories from around the world.</p>
+    <div class="search-container">
+      <input type="text" placeholder="Search by title, author, or genre...">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+  </section>
+
+  <!-- Book Section -->
+  <section class="book-section">
+    <h2>Popular Books</h2>
+    <div class="book-grid">
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10523363-L.jpg" alt="The Great Gatsby">
+        <div class="book-info">
+          <h4>The Great Gatsby</h4>
+          <p>F. Scott Fitzgerald</p>
+        </div>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10958326-L.jpg" alt="1984">
+        <div class="book-info">
+          <h4>1984</h4>
+          <p>George Orwell</p>
+        </div>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/8231856-L.jpg" alt="To Kill a Mockingbird">
+        <div class="book-info">
+          <h4>To Kill a Mockingbird</h4>
+          <p>Harper Lee</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn" style="display: block; margin: 20px auto;">See More...</button>
+  </section>
+
+
+
+
+  <!-- footer -->
+
+  <footer>
+    <a href="index.html">Home</a>
+    <a href="">My Library</a>
+    <a href="about.html" target="_blank">About Us</a>
+    <br>
+    <p>© 2025 BookFabel | Crafted with 📚 and ❤️</p>
+  </footer>
+
+
+
+
+
+  <!-- navbar script -->
+  <script src="js/navbar-script.js">
+  </script>
+
+
+<script>
+  // Store the current page URL when the user is here
+  sessionStorage.setItem("lastPage", window.location.href);
+</script>
+
+
+
+
+
+</body>
+
+</html>

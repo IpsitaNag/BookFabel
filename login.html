@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookFabel — Login or Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+
+<body>
+  <div class="overlay" id="authOverlay">
+    <div class="container">
+      <div class="left-box">
+        <h1>BookFabel</h1>
+        <p>A world where every book tells its own fable</p>
+        <img src="assets/story.png" alt="Books Illustration" />
+        <a href="navbar.html" class="btn">Explore Now</a>
+      </div>
+
+      <div class="form-box" id="loginBox">
+        <span class="close-btn" onclick="goBack()">&times;</span>
+        <h2>Login Now</h2>
+        <form>
+          <input type="email" placeholder="Email" required />
+          <div class="password-field">
+            <input type="password" placeholder="Password" required />
+            <span class="toggle">👁️</span>
+          </div>
+          <button type="button" class="btn">Login</button>
+
+          <p class="or">Or login with</p>
+          <div class="social-login">
+            <button class="social"><img src="assets/google.png" alt=""> Login with Google</button>
+          </div>
+          <p class="switch">Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+        </form>
+      </div>
+
+      <div class="form-box hidden" id="signupBox">
+        <span class="close-btn" onclick="goBack()">&times;</span>
+        <h2>SignUp Now</h2>
+        <form>
+          <input type="text" placeholder="Username" required />
+          <input type="email" placeholder="Email" required />
+          <div class="password-field">
+            <input type="password" placeholder="Password" required />
+            <span class="toggle">👁️</span>
+          </div>
+          <button type="submit" class="btn">Sign Up</button>
+          <p class="or">Or sign up with</p>
+          <div class="social-login">
+            <button class="social"><img src="assets/google.png" alt=""> Sign up with Google</button>
+          </div>
+          <p class="switch">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Script -->
+  <script>
+    const loginBox = document.getElementById("loginBox");
+    const signupBox = document.getElementById("signupBox");
+
+    function showSignup() {
+      loginBox.classList.add("hidden");
+      signupBox.classList.remove("hidden");
+    }
+
+    function showLogin() {
+      signupBox.classList.add("hidden");
+      loginBox.classList.remove("hidden");
+    }
+
+    // 👁️ Password toggle logic
+    document.querySelectorAll(".toggle").forEach((eye) => {
+      eye.addEventListener("click", () => {
+        const input = eye.previousElementSibling;
+        if (input.type === "password") {
+          input.type = "text";
+          eye.textContent = "🙈";
+        } else {
+          input.type = "password";
+          eye.textContent = "👁️";
+        }
+      });
+    });
+
+
+    function goBack() {
+      // Go back to the page the user was previously on
+      if (document.referrer) {
+        window.location.href = document.referrer;
+      } else {
+        // If there's no referrer (e.g., opened directly)
+        window.location.href = "index.html"; // fallback
+      }
+    }
+
+  </script>
+
+
+<script>
+  // Wait for the page to load
+  window.addEventListener("DOMContentLoaded", () => {
+    const closeBtn = document.querySelector(".close-btn");
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        // Get the last visited page
+        const lastPage = sessionStorage.getItem("lastPage");
+
+        if (lastPage) {
+          // Go back to that page
+          window.location.href = lastPage;
+        } else {
+          // If no previous page found, go to home
+          window.location.href = "index.html";
+        }
+      });
+    }
+  });
+</script>
+
+
+</body>
+
+</html>

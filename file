@@ -1,0 +1,29 @@
+<!-- Navbar placeholder -->
+<div id="navbar-container"></div>
+<script src="navbar.js"></script>
+ fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
+    });
+
+<!-- footer placeholder -->
+<div id="footer-container"></div>
+<script src="footer.js"></script>
+fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+
+
+<!-- Browse dropdown -->
+<script src="/book/js/navbar-script.js"></script>
+
+
+
+<!-- need to add in dashboard.html or any html page will create -->
+<script>
+  // Store the current page URL when the user is here
+  sessionStorage.setItem("lastPage", window.location.href);
+</script>
