@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | BookFabel</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+
+    <!-- story line -->
+    <div class="story">"A world where every book tells its own fable.”</div>
+
+    <!-- navbar -->
+    <nav class="navbar">
+      <a href="index.html" class="logo" target="_blank">BookFabel</a>
+      <i class="fas fa-bars hamburger" id="hamburger"></i>
+      <ul id="navLinks">
+        <li><a href="index.html" target="_blank">Home</a></li>
+        <li><a href="#" id="libraryBtn" target="_blank">My Library</a></li>
+        <div id="loginModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);
+                    background:#fff; padding:17px; border:2px solid #333; border-radius:8px; z-index:100;">
+          <p>Please log in first to access the library!</p>
+          <button onclick="closeModal()" style="margin-top: 8px; padding: 3px;">OK</button>
+        </div>
+        <li>
+          <div class="dropdown">
+            <a href="#" class="dropbtn" onclick="toggleDropdown(event)">Browse ▼</a>
+            <div class="dropdown-content">
+              <a href="#">Art</a>
+              <a href="#">Advanture</a>
+              <a href="#">Biography</a>
+              <a href="#">Comics</a>
+              <a href="#">Detective</a>
+              <a href="#">Thriller</a>
+              <a href="#">Horror</a>
+              <a href="#">Fantacy</a>
+              <a href="#">Romance</a>
+              <a href="#">History</a>
+              <a href="#">Self Help</a>
+              <a href="#">Funny</a>
+              <a href="#" style="text-decoration: underline;">All</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <a href="#" class="btn" >Logout</a>
+    </nav>
+  </header>
+<br><br><br><br><br>
+
+
+
+<!-- Profile Section -->
+<section class="profile-section">
+  <div class="profile-card">
+    <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profilePic">
+    <h2 id="username">Username</h2>
+    <p id="email">user@example.com</p>
+    <button class="btn-edit" id="editProfileBtn">Edit Profile</button>
+
+    <div class="profile-stats">
+      <div class="stat">
+        <h3 id="readCount">0</h3>
+        <p>Read</p>
+      </div>
+      <div class="stat">
+        <h3 id="readingCount">0</h3>
+        <p>Currently Reading</p>
+      </div>
+      <div class="stat">
+        <h3 id="tbrCount">0</h3>
+        <p>To Be Read</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br><br><br>
+
+<footer>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">My Library</a>
+    <a href="about.html" target="_blank">About Us</a>
+    <br>
+    <p>© 2025 BookFabel | Crafted with 📚 and ❤</p>
+  </footer>
+
+<script src="js/profile.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/navbar-script.js"></script>
+</body>
+</html>
