@@ -1,23 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Library | BookFabel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link rel="stylesheet" href="css/dashboard.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/footer.css">
 
   <style>
-    footer{
+    footer {
       margin-top: 310px;
+    }
+
+    /* for profile in navbar  */
+    .account-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .account-btn {
+      
+      color: #244a23;
+      background-color: #fff8d1;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.6rem;
+    }
+
+
+    .dropdown-menu {
+      display: none;
+      /* hidden by default */
+      position: absolute;
+      right: 0;
+      background: #fff;
+      min-width: 140px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 14px;
+      text-decoration: none;
+      color: #333;
+      transition: 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+      background: #f0f0f0;
     }
   </style>
 </head>
+
 <body>
 
-    <!-- header -->
-     <header>
+  <!-- header -->
+  <header>
 
     <!-- story line -->
     <div class="story">"A world where every book tells its own fable.”</div>
@@ -55,7 +101,12 @@
           </div>
         </li>
       </ul>
-      <a href="login.html?redirect=" class="btn" id="joinBtn">Join</a>
+      <button class="account-btn" id="accountBtn"><i class="fa-solid fa-circle-user"></i></button>
+      <div class="dropdown-menu" id="accountMenu">
+        <a href="profile.html">Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
     </nav>
   </header>
 
@@ -84,7 +135,7 @@
 
 
   <!-- footer -->
-   <footer>
+  <footer>
     <a href="index.html">Home</a>
     <a href="dashboard.html">My Library</a>
     <a href="about.html" target="_blank">About Us</a>
@@ -96,9 +147,32 @@
   <script src="js/navbar-script.js"></script>
 
 
+
+  <!-- for profile in navabr -->
+
   <script>
-  // Store the current page URL when the user is here
-  sessionStorage.setItem("lastPage", window.location.href);
-</script>
+    const accountBtn = document.getElementById("accountBtn");
+    const accountMenu = document.getElementById("accountMenu");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    accountBtn.addEventListener("click", () => {
+      accountMenu.style.display = accountMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener("click", function (e) {
+      if (!accountBtn.contains(e.target) && !accountMenu.contains(e.target)) {
+        accountMenu.style.display = "none";
+      }
+    });
+
+    // Logout functionality
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("loggedInUser"); // remove login info
+      window.location.href = "index.html"; // redirect to homepage or login page
+    });
+
+  </script>
 </body>
+
 </html>
