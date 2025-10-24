@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Library | BookFabel</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <style>
+    footer{
+      margin-top: 310px;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- header -->
+     <header>
+
+    <!-- story line -->
+    <div class="story">"A world where every book tells its own fable.”</div>
+
+    <!-- navbar -->
+    <nav class="navbar">
+      <a href="index.html" class="logo" target="_blank">BookFabel</a>
+      <i class="fas fa-bars hamburger" id="hamburger"></i>
+      <ul id="navLinks">
+        <li><a href="index.html" target="_blank">Home</a></li>
+        <li><a href="#" id="libraryBtn" target="_blank">My Library</a></li>
+        <div id="loginModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);
+                    background:#fff; padding:17px; border:2px solid #333; border-radius:8px; z-index:100;">
+          <p>Please log in first to access the library!</p>
+          <button onclick="closeModal()" style="margin-top: 8px; padding: 3px;">OK</button>
+        </div>
+        <li>
+          <div class="dropdown">
+            <a href="#" class="dropbtn" onclick="toggleDropdown(event)">Browse ▼</a>
+            <div class="dropdown-content">
+              <a href="#">Art</a>
+              <a href="#">Advanture</a>
+              <a href="#">Biography</a>
+              <a href="#">Comics</a>
+              <a href="#">Detective</a>
+              <a href="#">Thriller</a>
+              <a href="#">Horror</a>
+              <a href="#">Fantacy</a>
+              <a href="#">Romance</a>
+              <a href="#">History</a>
+              <a href="#">Self Help</a>
+              <a href="#">Funny</a>
+              <a href="#" style="text-decoration: underline;">All</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <a href="login.html?redirect=" class="btn" id="joinBtn">Join</a>
+    </nav>
+  </header>
+
+
+  <br><br><br><br>
+  <!-- body -->
+  <div class="library-header">
+    <h1>📚 My Library</h1>
+    <p>Track your reading journey !</p>
+  </div>
+
+  <div class="library-tabs">
+    <button class="tab active" data-tab="reading">Currently Reading 📖</button>
+    <button class="tab" data-tab="tbr">To Be Read 📚</button>
+    <button class="tab" data-tab="read">Read ✅</button>
+    <button class="tab" data-tab="reviews">My Reviews ⭐</button>
+  </div>
+
+  <section class="library-content">
+    <div class="tab-content active" id="reading"></div>
+    <div class="tab-content" id="tbr"></div>
+    <div class="tab-content" id="read"></div>
+    <div class="tab-content" id="reviews"></div>
+  </section>
+
+
+
+  <!-- footer -->
+   <footer>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">My Library</a>
+    <a href="about.html" target="_blank">About Us</a>
+    <br>
+    <p>© 2025 BookFabel | Crafted with 📚 and ❤</p>
+  </footer>
+
+  <script src="js/dashboard.js"></script>
+  <script src="js/navbar-script.js"></script>
+
+
+  <script>
+  // Store the current page URL when the user is here
+  sessionStorage.setItem("lastPage", window.location.href);
+</script>
+</body>
+</html>
