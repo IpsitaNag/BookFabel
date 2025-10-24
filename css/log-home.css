@@ -1,0 +1,62 @@
+.suggestions-section h2 {
+  color: #3f3d56;
+  margin-bottom: 20px;
+}
+
+.suggestions-section .book-card button {
+  margin-top: 8px;
+  background: #5a58d3;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.suggestions-section .book-card button:hover {
+  background: #3f3d56;
+}
+
+ /* for profile in navbar  */
+    .account-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .account-btn {
+      
+      color: #244a23;
+      background-color: #fff8d1;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.6rem;
+    }
+
+
+    .dropdown-menu {
+      display: none;
+      /* hidden by default */
+      position: absolute;
+      right: 0;
+      background: #fff;
+      min-width: 140px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 14px;
+      text-decoration: none;
+      color: #333;
+      transition: 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+      background: #f0f0f0;
+    }
