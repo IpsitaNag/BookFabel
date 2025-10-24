@@ -116,7 +116,7 @@ function showBookDetails(item, allItems) {
         <p class="desc" id="bookDesc">${shortDescription} ${fullDescription.length > 300 ? '<span id="toggleDesc" style="color: blue; cursor: pointer;">Read More</span>' : ''}</p>
 
         <div class="btn-group">
-          <button class="add-to-library btn-blue" onclick="openAddMenu('${title}', '${authors}', '${cover}')">Add to Library</button>
+          <a href="login.html" class="btn-blue">Add to Library</a>
           <a href="${previewLink}" target="_blank" class="btn-preview">Preview</a>
         </div>
         <br>
@@ -159,37 +159,3 @@ document.getElementById("searchInput").addEventListener("keypress", function (e)
     searchBooks();
   }
 });
-
-function openAddMenu(title, author, cover) {
-  // Ask user where to add the book
-  const choice = prompt(`Where do you want to add "${title}"?\n1️⃣ Currently Reading\n2️⃣ To Be Read (TBR)\n3️⃣ Read\n\nEnter the number:`);
-
-  let category = "";
-  if (choice === "1") category = "reading";
-  else if (choice === "2") category = "tbr";
-  else if (choice === "3") category = "read";
-  else {
-    alert("Invalid choice!");
-    return;
-  }
-
-  // Prepare the book object
-  const book = { title, author, cover };
-
-  // Retrieve library from localStorage or initialize
-  const library = JSON.parse(localStorage.getItem("library")) || { reading: [], tbr: [], read: [] };
-
-  // Prevent duplicates
-  if (library[category].some(b => b.title === title)) {
-    alert("This book is already in that section!");
-    return;
-  }
-
-  // Add to the selected list
-  library[category].push(book);
-  localStorage.setItem("library", JSON.stringify(library));
-
-  alert(`✅ "${title}" added to your ${category === "tbr" ? "TBR" : category === "reading" ? "Currently Reading" : "Read"} list!`);
-}
-
-
