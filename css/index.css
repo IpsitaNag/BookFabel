@@ -161,6 +161,7 @@
 
 .btn-blue {
   background: #5a7d4f;
+   text-decoration: none;
 }
 .btn-blue:hover {
   background: #43633b;
