@@ -48,25 +48,5 @@ function loadBooks() {
 loadBooks();
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const library = JSON.parse(localStorage.getItem("library")) || { reading: [], tbr: [], read: [] };
 
-  function renderList(id, books) {
-    const container = document.getElementById(id);
-    if (!container) return;
-    container.innerHTML = books.length
-      ? books.map(b => `
-          <div class="book-card">
-            <img src="${b.cover}" alt="${b.title}">
-            <h4>${b.title}</h4>
-            <p>${b.author}</p>
-          </div>
-        `).join("")
-      : "<p>No books yet.</p>";
-  }
-
-  renderList("readingList", library.reading);
-  renderList("tbrList", library.tbr);
-  renderList("readList", library.read);
-});
 
